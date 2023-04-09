@@ -21,7 +21,7 @@ KweiPay是一套使用加密数字货币支付&结算系统。区别于传统的
 
 + 访问示例
 
-http://management.kweipay.com/recharge?sign=3da20594f20fc037d1a4c46452f1d3132399ff121deaa83c13a827991406916f&app_id=e124b881d890ca8ba243b2f09620974cd853267babfd40dca53e0265b9375cf5&merchant_uid=100001&merchant_cid=1&chain=usdt_trc20
+http://management.kweipay.com/recharge?sign=3da20594f20fc037d1a4c46452f1d3132399ff121deaa83c13a827991406916f&app_id=e124b881d890ca8ba243b2f09620974cd853267babfd40dca53e0265b9375cf5&merchant_uid=100001&merchant_cid=1&chain=TRX&token=USDT
 
 + 页面参数
 
@@ -31,11 +31,12 @@ http://management.kweipay.com/recharge?sign=3da20594f20fc037d1a4c46452f1d3132399
 | app_id       | 商户从后台API管理中获取到的key | 是       |
 | merchant_uid | 商户在平台的用户ID             | 是       |
 | merchant_cid | 用户所在商户平台的用户ID       | 是       |
-| chain        | usdt_trc20/usdt_erc20          | 否       |
+| token        | 币种                         | 是 |
+| chain        | TRX/ETH          | 否       |
 
 + 签名规则
 
-> 将`app_id`、`merchant_uid`、`merchant_cid`以升序进行连接，签名使用`HMAC SHA256`算法。`app_id`所对应的`secret`作为 `HMAC SHA256` 的密钥，其他所有参数作为`HMAC SHA256`的操作对象，得到的输出即为签名。
+> 将`app_id`、`merchant_uid`、`merchant_cid`、`token`以降序进行连接，签名使用`HMAC SHA256`算法。`app_id`所对应的`secret`作为 `HMAC SHA256` 的密钥，其他所有参数作为`HMAC SHA256`的操作对象，得到的输出即为签名。
 
 + PHP示例
 
@@ -44,7 +45,8 @@ http://management.kweipay.com/recharge?sign=3da20594f20fc037d1a4c46452f1d3132399
   $params = [
       'app_id'         => 'SC2jOccNErhhXwuiuuPstUdk97zndL6p2M4XJqxI0HKFzIFyqYsSPeF74RyOznYA',
       'merchant_uid'   => 100002,
-      'merchant_cid'   => 1
+      'merchant_cid'   => 1,
+      'token'          => 'USDT'
   ];
   ksort($params);
   echo hash_hmac('sha256', http_build_query($params), 'ExThHGsiDJT7DTvNfWVKI7zU2tZhFHxnR5BO0Zvf4fEGD1BY6R8dDr4rPqtSm09b');
