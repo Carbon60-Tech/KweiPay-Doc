@@ -7,7 +7,7 @@ KweiPay是一套使用加密数字货币支付&结算系统。区别于传统的
 - 交易效率更高。用户充值、商户结算等交易，一般1分钟以内即可到账
 
 ### 商户接入方式
-商户需要先申请一对 `Api Key & Secret`，用于信息加加密
+商户需要先申请一对 `Api Key & Secret`，用于信息加加密，[API KEY使用说明](ApiKeyManagement.md)
 
 
 ##### 1、KweiPay收银台
