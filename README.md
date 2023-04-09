@@ -69,6 +69,7 @@ http://management.kweipay.com/recharge?sign=3da20594f20fc037d1a4c46452f1d3132399
 
    <img width="1973" alt="image-20230328212059066" src="https://user-images.githubusercontent.com/20775615/228236133-8f813d32-9837-445c-aec2-b6710fea445e.png">
 
+5.用户完成充值后，KweiPay会通过Api将此充值消息推送给商户。商户也可刷新管理后台通过充值记录查看
 
 #### 二：通过Api接入（适合有编程能力的商户）
 
