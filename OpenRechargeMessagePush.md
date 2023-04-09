@@ -29,7 +29,7 @@
     "sign":"3da20594f20fc037d1a4c46452f1d3132399ff121deaa83c13a827991406916f",        // 鉴权签名
     "from":"TVZTyrcHW47GPQWm3FeVAo4hD9yFHSun6A",                                      // 付款人
     "to":"TSoRWegvhJG6d7Ftk2HMsWkiNGwYWcLKiV",                                        // 收款人
-    "value":200000000,                                                                // 充值金额，最小单位
+    "value":200,                                                                      // 充值金额
     "token":"USDT",                                                                   // 充值币种
     "chain":"TRX",                                                                    // 公链
     "hash":"299c1e2ad916eb747ba8a29c1536279b8cbb9543bfc1dfc7d869a4441144a931",        // 交易哈希
