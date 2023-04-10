@@ -94,7 +94,7 @@ http://management.kweipay.com/recharge?sign=3da20594f20fc037d1a4c46452f1d3132399
 |     app_id     | string | 商户从后台API管理中获取到的key | 是 |
 |  merchant_uid  | string | 商户在平台的用户ID | 是 |
 |  merchant_cid  | string | 用户所在商户平台的用户ID | 是 |
-|     chain      | string | usdt_trc20/usdt_erc20 | 是 |
+|     chain      | string | TRX/ETH | 是 |
 | qrcode_size | int | 二维码宽度，传递该参数后，接口会返回base64的二维码对象，解码后可直接前端展示。若未传递该参数，则不返回二维码对象。 | 否 |
 
 ##### 返回参数
