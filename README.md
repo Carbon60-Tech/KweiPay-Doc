@@ -102,7 +102,7 @@ http://management.kweipay.com/recharge?sign=3da20594f20fc037d1a4c46452f1d3132399
 ```json
 {
    // code < 0 代表请求失败
-    "code": 1,
+    "code": 0,
    // 状态
     "message": "success",
    // data
