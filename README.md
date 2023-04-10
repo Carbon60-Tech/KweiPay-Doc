@@ -108,7 +108,7 @@ http://management.kweipay.com/recharge?sign=3da20594f20fc037d1a4c46452f1d3132399
    // data
     "data": {
        // 币种 & 公链
-        "chain": "USDT_TRC20",
+        "chain": "TRX",
        // 分配的地址
         "address": "TSBjEunKJiTRW8ajh8jh8S7kqEaQW7hnvJ",
        // 商户UID
