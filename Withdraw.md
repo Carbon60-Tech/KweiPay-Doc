@@ -45,7 +45,7 @@ $params = [
   'timestamp' => 1234567890
 ];
 ksort($params);
-echo hash_hmac('sha256', http_build_query($params), `私钥`); //私钥请联系管理员获取
+echo hash_hmac('sha256', http_build_query($params), `私钥`); //查看商户后台获取私钥
 ```
 
 ### 接口返回要求
@@ -130,7 +130,7 @@ $params = [
   'timestamp'   => 1681053844,
 ];
 ksort($params);
-echo hash_hmac('sha256', http_build_query($params), '私钥'); //私钥请联系管理员获取
+echo hash_hmac('sha256', http_build_query($params), '私钥'); //查看商户后台获取私钥
 ```
 
 ### 接口返回要求
