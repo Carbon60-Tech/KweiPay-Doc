@@ -55,42 +55,42 @@ echo hash_hmac('sha256', http_build_query($params), `私钥`); //私钥请联系
 ```json
 {
   "code":0,
-  "data":[
+  "data": [
             {
-                'withdraw_id' => 1,                                 // 提现订单编号，唯一
-                'merchant_cid' => 'yeyeyuki',                       // 用户ID，可不传
-                'address' => 'TK5Rh8xpmyvEhCq6LNPqw9hUX4t1ezSZ76',  // 用户提现地址
-                'token' => 'USDT',                                  // 用户提现token，默认值USDT，大写
-                'chain' => 'TRX',                                   // 用户提现公链，默认TRX，大写
-                'amount' => 200                                     // 用户提现数量
+                "withdraw_id": 1,                                 // 提现订单编号，唯一
+                "merchant_cid": "yeyeyuki",                       // 用户ID，可不传
+                "address": "TK5Rh8xpmyvEhCq6LNPqw9hUX4t1ezSZ76",  // 用户提现地址
+                "token": "USDT",                                  // 用户提现token，默认值USDT，大写
+                "chain": "TRX",                                   // 用户提现公链，默认TRX，大写
+                "amount": 200                                     // 用户提现数量
             },
             {
-                'withdraw_id' => 2,
-                'address' => 'TK5Rh8xpmyvEhCq6LNPqw9hUX4t1ezSZ76',
-                'token' => 'USDT',
-                'chain' => 'TRX',
-                'amount' => 200
+                "withdraw_id": 2,
+                "address": "TK5Rh8xpmyvEhCq6LNPqw9hUX4t1ezSZ76",
+                "token": "USDT",
+                "chain": "TRX",
+                "amount": 200
             },
             {
-                'withdraw_id' => 3,
-                'address' => 'TK5Rh8xpmyvEhCq6LNPqw9hUX4t1ezSZ76',
-                'token' => 'USDT',
-                'chain' => 'TRX',
-                'amount' => 200
+                "withdraw_id": 3,
+                "address": "TK5Rh8xpmyvEhCq6LNPqw9hUX4t1ezSZ76",
+                "token": "USDT",
+                "chain": "TRX",
+                "amount": 200
             },
             {
-                'withdraw_id' => 4,
-                'address' => '0x86eb26cd9f3ccf81d2ae2be7052759b58d3cfdb4',
-                'token' => 'USDT',
-                'chain' => 'ETH',
-                'amount' => 200
+                "withdraw_id" : 4,
+                "address" : "0x86eb26cd9f3ccf81d2ae2be7052759b58d3cfdb4",
+                "token" : "USDT",
+                "chain" : "ETH",
+                "amount" : 200
             },
             {
-                'withdraw_id' => 5,
-                'address' => '0x86eb26cd9f3ccf81d2ae2be7052759b58d3cfdb4',
-                'token' => 'USDT',
-                'chain' => 'ETH',
-                'amount' => 200
+                "withdraw_id" : 5,
+                "address" : "0x86eb26cd9f3ccf81d2ae2be7052759b58d3cfdb4",
+                "token" : "USDT",
+                "chain" : "ETH",
+                "amount" : 200
             }
     ]
 }
