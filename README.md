@@ -8,7 +8,8 @@ KweiPay是一套使用加密数字货币支付&结算系统。区别于传统的
 
 ## 商户接入KWeiPay方式
 商户需要先申请一对 `Api Key & Secret`，用于信息加加密，[API KEY使用说明](ApiKeyManagement.md)
-[KWeiPay接入说明](KWeiPayCheckoutCounter.md)
+
+KWeiPay提供了4中方式接入，详细请参考[KWeiPay接入说明](KWeiPayCheckoutCounter.md)
 
 ## 开启充值消息推送
 
