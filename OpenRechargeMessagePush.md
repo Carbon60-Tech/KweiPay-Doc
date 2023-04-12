@@ -62,7 +62,7 @@ $params = [
   'timestamp' => 1681053844,
 ];
 ksort($params);
-echo hash_hmac('sha256', http_build_query($params), '3eff9e5156401d6dabc84f128004ce34597414c637dc43c5acbee793f382ab80');
+echo hash_hmac('sha256', http_build_query($params), '私钥'); //查看商户后台获取私钥
 ```
 
 ### 接口返回要求
