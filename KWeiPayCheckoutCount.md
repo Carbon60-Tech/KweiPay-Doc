@@ -65,16 +65,20 @@ http://management.kweipay.com/recharge?sign=3da20594f20fc037d1a4c46452f1d3132399
 请求分配充值地址。
 
 > 需先在商户后台申请API KEY，[API KEY使用说明](ApiKeyManagement.md)
+> 地址池分为2种：
+>   一种是商户授权KWeiPay帮忙分配地址，由KWeiPay来维护此类地址和用户的映射关系，此类商户适合使用方式一接入。
+>   另一种是商户自主进行分配，通过接口获取地址后，导入本地，由商户自主分配地址和用户的映射关系，无需通知KWeiPay，此类商户适合使用方式二接入。
 
-## 接口路径
+## 方式一：获取由KWeiPay维护映射关系的钱包地址
+### 接口路径
 
 `https://api.kweipay.com/api/wallets_address`
 
-## 访问方式
+### 访问方式
 
 `POST`
 
-## 参数说明
+### 参数说明
 
 | 参数名称 | 类型 | 释义 | 是否必须 |
 |:--------------:|:------:|:-----------------------|:--:|
@@ -85,7 +89,7 @@ http://management.kweipay.com/recharge?sign=3da20594f20fc037d1a4c46452f1d3132399
 |     chain      | string | TRX/ETH | 是 |
 | qrcode_size | int | 二维码宽度，传递该参数后，接口会返回base64的二维码对象，解码后可直接前端展示。若未传递该参数，则不返回二维码对象。 | 否 |
 
-## 返回参数
+### 返回参数
 
 ```json
 {
@@ -108,6 +112,187 @@ http://management.kweipay.com/recharge?sign=3da20594f20fc037d1a4c46452f1d3132399
     }
 }
 ```
+
+## 方式二：获取由商户自主维护映射（自主分配）关系的钱包地址
+### 接口路径
+
+`https://api.kweipay.com/api/self_assigned_address`
+
+### 访问方式
+
+`POST`
+
+### 参数说明
+
+| 参数名称 | 类型 | 释义 | 是否必须 |
+|:--------------:|:------:|:-----------------------|:--:|
+|      sign      | string | 签名 | 是 |
+|     app_id     | string | 商户从后台API管理中获取到的key | 是 |
+|  merchant_uid  | string | 商户在平台的用户ID | 是 |
+
+### 返回参数
+
+```json
+{
+    // code < 0 代表请求失败
+    "code": 0,
+    // 状态
+    "message": "success",
+    // data
+    "data": [
+        {
+            // 钱包实例名称
+            "walletName": "001",
+            // 钱包索引
+            "index": 100,
+            // 公链
+            "chain": "TRX",
+            // 钱包地址
+            "address": "TNGbFP7nhkKyNd6P8GsqLUgG2UPJLnMPU6"
+        },
+        {
+            "walletName": "001",
+            "index": 101,
+            "chain": "TRX",
+            "address": "TXKmzfQKmTxpLK1qqgwujYbd4C8hnZPTXK"
+        },
+        {
+            "walletName": "001",
+            "index": 102,
+            "chain": "TRX",
+            "address": "TRufpMn9tDhdoNZYLSL7m4JoLnY3BN3D7t"
+        },
+        {
+            "walletName": "001",
+            "index": 103,
+            "chain": "TRX",
+            "address": "THQgx5wyPHXWYF45vhBGgNPFaX5hRTcsAZ"
+        },
+        {
+            "walletName": "001",
+            "index": 104,
+            "chain": "TRX",
+            "address": "TWX6EfcQh7gw6tiP8BgfwrP1zKXpY6r7nW"
+        },
+        {
+            "walletName": "001",
+            "index": 105,
+            "chain": "TRX",
+            "address": "TGCCFEL734DxsLhf6HzgdXLTDTVcfn1est"
+        },
+        {
+            "walletName": "001",
+            "index": 106,
+            "chain": "TRX",
+            "address": "TTxjokPhuYgUVisSdkxQLuCaH9bd2ng3pp"
+        },
+        {
+            "walletName": "001",
+            "index": 107,
+            "chain": "TRX",
+            "address": "TQxQu4KGLetDJ4XoZVqwvUSjzB27sDMjq6"
+        },
+        {
+            "walletName": "001",
+            "index": 108,
+            "chain": "TRX",
+            "address": "TSBjEunKJiTRW8ajh8jh8S7kqEaQW7hnvJ"
+        },
+        {
+            "walletName": "001",
+            "index": 109,
+            "chain": "TRX",
+            "address": "TTdE2nStbvnx7chnz6LWH4nMarFVCdeUtF"
+        },
+        {
+            "walletName": "001",
+            "index": 110,
+            "chain": "TRX",
+            "address": "TPPmQ5EBCBswSCNiWfZwCK7GaQYbD8xpqC"
+        },
+        {
+            "walletName": "001",
+            "index": 110,
+            "chain": "ETH",
+            "address": "0x933ea9694e7cfe38989bf3887af3401114edcf38"
+        },
+        {
+            "walletName": "001",
+            "index": 111,
+            "chain": "ETH",
+            "address": "0x4295289fa02cc1b33600ff7722b4d9f581d48e1e"
+        },
+        {
+            "walletName": "001",
+            "index": 112,
+            "chain": "ETH",
+            "address": "0xb4138ddcb431ae4835008137ac3b0f373118d7fa"
+        },
+        {
+            "walletName": "001",
+            "index": 113,
+            "chain": "ETH",
+            "address": "0xa8a347afaae1ac6db64b98dd076c60ff1d448a4a"
+        },
+        {
+            "walletName": "001",
+            "index": 114,
+            "chain": "ETH",
+            "address": "0x292d70b73881e5889b1b419b0563072e3f40f9ff"
+        },
+        {
+            "walletName": "001",
+            "index": 115,
+            "chain": "ETH",
+            "address": "0x23275b352ec4dc38b3350abe8a8cfd0f75375650"
+        },
+        {
+            "walletName": "001",
+            "index": 116,
+            "chain": "ETH",
+            "address": "0x3c02e9307b6274fba4ac81c29a41bad5cd535b07"
+        },
+        {
+            "walletName": "001",
+            "index": 117,
+            "chain": "ETH",
+            "address": "0x199142e609b54996b035a90bf609b539b378f37d"
+        },
+        {
+            "walletName": "001",
+            "index": 118,
+            "chain": "ETH",
+            "address": "0xa66054926fb9dd33e29ca1b75d87c0a44bd74004"
+        },
+        {
+            "walletName": "001",
+            "index": 119,
+            "chain": "ETH",
+            "address": "0x04b2ac4c4f8f1727d285c518ea3384ca2dc2b06a"
+        },
+        {
+            "walletName": "001",
+            "index": 120,
+            "chain": "ETH",
+            "address": "0xd168fcdb8d1e701c827c55af7770e372fec83e3c"
+        },
+        {
+            "walletName": "001",
+            "index": 121,
+            "chain": "ETH",
+            "address": "0x98d4aa88dffc08ec784db86a78cccaa7fcf120c8"
+        },
+        {
+            "walletName": "001",
+            "index": 122,
+            "chain": "ETH",
+            "address": "0x7549cd267ebfe42bfc38083986e8346eca02fd23"
+        }
+    ]
+}
+```
+
+
 
 # 三：通过`SDK`接入
 
